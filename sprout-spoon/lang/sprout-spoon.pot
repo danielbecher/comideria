@@ -1,0 +1,1460 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sprout & Spoon\n"
+"POT-Creation-Date: 2016-05-29 16:51-0800\n"
+"PO-Revision-Date: 2016-05-29 16:51-0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:13
+msgid "404"
+msgstr ""
+
+#: 404.php:14 content-none.php:18
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: archive.php:7
+msgid "<span>Daily Archives:</span>"
+msgstr ""
+
+#: archive.php:9 archive.php:16 archive.php:23
+#, php-format
+msgid "<h1>%s</h1>"
+msgstr ""
+
+#: archive.php:14
+msgid "<span>Monthly Archives:</span>"
+msgstr ""
+
+#: archive.php:21
+msgid "<span>Yearly Archives:</span>"
+msgstr ""
+
+#: archive.php:27
+msgid "<h1>Archives:</h1>"
+msgstr ""
+
+#: author.php:5
+msgid "All Posts By:"
+msgstr ""
+
+#: category.php:4
+msgid "Browsing Category"
+msgstr ""
+
+#: category.php:5 search.php:6 tag.php:6
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:386 class-tgm-plugin-activation.php:827
+#: class-tgm-plugin-activation.php:2533 class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:387 class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:388
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:934 class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3509 class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3509 class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: comments.php:6
+msgid "No Comments"
+msgstr ""
+
+#: comments.php:6
+msgid "1 Comment"
+msgstr ""
+
+#: comments.php:6
+msgid "Comments"
+msgstr ""
+
+#: comments.php:33
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:34
+msgid "Cancel Reply"
+msgstr ""
+
+#: comments.php:35
+msgid "Post Comment"
+msgstr ""
+
+#: content-list.php:27 content.php:123
+msgid "By"
+msgstr "Por"
+
+#: content-none.php:5
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:13
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content.php:94
+msgid "Continue reading"
+msgstr "Continue lendo"
+
+#: content.php:98
+msgid "Continue Reading..."
+msgstr "Continue Lendo..."
+
+#: footer.php:16 functions/customizer/sp_customizer_settings.php:1498
+msgid "Facebook"
+msgstr ""
+
+#: footer.php:17 functions/customizer/sp_customizer_settings.php:1511
+msgid "Twitter"
+msgstr ""
+
+#: footer.php:18 functions/customizer/sp_customizer_settings.php:1524
+msgid "Instagram"
+msgstr ""
+
+#: footer.php:19 functions/customizer/sp_customizer_settings.php:1537
+msgid "Pinterest"
+msgstr ""
+
+#: footer.php:20 functions/customizer/sp_customizer_settings.php:1550
+msgid "Bloglovin"
+msgstr ""
+
+#: footer.php:21
+msgid "Google +"
+msgstr ""
+
+#: footer.php:22 functions/customizer/sp_customizer_settings.php:1576
+msgid "Tumblr"
+msgstr ""
+
+#: footer.php:23 functions/customizer/sp_customizer_settings.php:1589
+msgid "Youtube"
+msgstr ""
+
+#: footer.php:24 functions/customizer/sp_customizer_settings.php:1602
+msgid "Dribbble"
+msgstr ""
+
+#: footer.php:25 functions/customizer/sp_customizer_settings.php:1615
+msgid "Soundcloud"
+msgstr ""
+
+#: footer.php:26 functions/customizer/sp_customizer_settings.php:1628
+msgid "Vimeo"
+msgstr ""
+
+#: footer.php:27
+msgid "LinkedIn"
+msgstr ""
+
+#: footer.php:28
+msgid "RSS"
+msgstr ""
+
+#: footer.php:41
+msgid "Top"
+msgstr ""
+
+#: functions.php:20
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:116
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:122
+msgid "Widgets here will appear vertically to the right of your content."
+msgstr ""
+
+#: functions.php:125
+msgid "Instagram Footer"
+msgstr ""
+
+#: functions.php:131
+msgid ""
+"Use the \"Instagram\" widget here. IMPORTANT: For best result set number of "
+"photos to 12."
+msgstr ""
+
+#: functions.php:134
+msgid "Widget Area under Featured Area"
+msgstr ""
+
+#: functions.php:140 functions.php:149
+msgid "Intended for newsletter widget or banner ads"
+msgstr ""
+
+#: functions.php:143
+msgid "Widget Area under Single Post"
+msgstr ""
+
+#: functions.php:171
+msgid "Reply"
+msgstr ""
+
+#: functions.php:172
+msgid "Edit"
+msgstr ""
+
+#: functions.php:175
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:177
+msgid "Comment awaiting approval"
+msgstr ""
+
+#: functions.php:200
+msgid "Older Posts <i class=\"fa fa-angle-right\"></i>"
+msgstr ""
+
+#: functions.php:201
+msgid "<i class=\"fa fa-angle-left\"></i> Newer Posts"
+msgstr ""
+
+#: functions/customizer/sp_custom_controller.php:60
+msgid "&mdash; Select &mdash;"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:20
+#: functions/customizer/sp_customizer_settings.php:2752
+msgid "Custom CSS"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:21
+msgid "Add your custom CSS which will overwrite the theme CSS"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:28
+msgid "Color and Style Settings"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:32
+msgid "MISC Colors"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:39
+msgid "Newsletter Colors"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:46
+msgid "Post Colors"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:53
+msgid "Footer Colors"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:60
+msgid "Sidebar Colors"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:67
+msgid "Featured Area Colors"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:73
+msgid "Mobile Menu Colors"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:79
+msgid "Menu Colors"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:86
+msgid "Header Colors"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:93
+msgid "Wrapper style"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:100
+msgid "Background Color/Image"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:107
+msgid "Footer Settings"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:113
+msgid "Social Media Settings"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:114
+msgid "Enter your social media usernames. Icons will not show if left blank."
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:119
+msgid "Page Settings"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:125
+msgid "Post Settings"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:131
+msgid "Featured Area Settings"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:137
+msgid "Logo and Header Settings"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:143
+msgid "General Settings"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:466
+msgid ""
+"Copyright 2016 - <a href=\"http://solopine.com\">Solo Pine</a>. All Rights "
+"Reserved."
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:473
+msgid ""
+"Designed & Developed by <a href=\"http://solopine.com\">SoloPine.com</a>"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1086
+msgid "Disable Responsive"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1100
+msgid "Homepage Layout"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1106
+#: functions/customizer/sp_customizer_settings.php:1129
+msgid "Full Post Layout"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1107
+#: functions/customizer/sp_customizer_settings.php:1130
+msgid "3 Column Grid Post Layout"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1108
+#: functions/customizer/sp_customizer_settings.php:1131
+msgid "1 Full Post then 3 Column Grid Layout"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1109
+#: functions/customizer/sp_customizer_settings.php:1132
+msgid "2 Column Grid Post Layout"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1110
+#: functions/customizer/sp_customizer_settings.php:1133
+msgid "1 Full Post then 2 Column Grid Layout"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1111
+#: functions/customizer/sp_customizer_settings.php:1134
+msgid "List Layout"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1112
+#: functions/customizer/sp_customizer_settings.php:1135
+msgid "1 Full Post then List Layout"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1123
+msgid "Archive Layout"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1146
+msgid "Disable Sidebar on Homepage"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1160
+msgid "Disable Sidebar on Archives"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1174
+msgid "Homepage/Archive Post Summary Type"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1180
+msgid "Use Read More Tag"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1181
+msgid "Use Excerpt"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1193
+msgid "Upload Logo"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1206
+msgid "Top Header Padding"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1219
+msgid "Bottom Header Padding"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1233
+msgid "Hide Social Icons in Header"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1247
+msgid "Hide Search Bar in Header"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1262
+msgid "Enable Featured Area"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1275
+msgid "Select Featured Category"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1288
+msgid "Select featured post/page IDs"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1302
+msgid "Hide Categories"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1316
+msgid "Hide Title"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1331
+msgid "Featured Image (On Top of Post)"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1337
+msgid "Display Featured Image"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1338
+msgid "Hide Featured Image"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1339
+msgid "Hide Featured Image only on single post pages"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1350
+msgid "Hide Category"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1363
+msgid "Hide Tags"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1376
+#: inc/widgets/post_widget.php:139
+msgid "Hide Date"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1389
+msgid "Hide Author Name"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1402
+#: functions/customizer/sp_customizer_settings.php:1483
+msgid "Hide Share Buttons"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1415
+msgid "Hide Comment Link"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1428
+msgid "Hide Author Box"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1441
+msgid "Hide Related Posts Box"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1455
+msgid "Hide Next/Previous Post Links"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1470
+msgid "Hide Page Title"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1563
+msgid "Google Plus"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1641
+msgid "Linkedin (Use full URL to your Linkedin profile)"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1654
+msgid "RSS Link"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1669
+msgid "Footer Copyright Text"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1682
+msgid "Footer Text (Right side)"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1695
+msgid "Hide Footer Social Links"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1708
+msgid "Hide Back to Top"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1723
+msgid "Background Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1735
+msgid "Background Image"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1748
+msgid "Background Repeat"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1754
+#: functions/customizer/sp_customizer_settings.php:1904
+msgid "Repeat"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1755
+#: functions/customizer/sp_customizer_settings.php:1905
+msgid "No Repeat"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1756
+#: functions/customizer/sp_customizer_settings.php:1906
+msgid "Repeat Y"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1757
+#: functions/customizer/sp_customizer_settings.php:1907
+msgid "Repeat X"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1768
+msgid "Background Size"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1774
+#: functions/customizer/sp_customizer_settings.php:1924
+msgid "Auto"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1775
+#: functions/customizer/sp_customizer_settings.php:1925
+msgid "Cover"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1776
+#: functions/customizer/sp_customizer_settings.php:1926
+msgid "Contain"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1787
+msgid "Background Position"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1793
+#: functions/customizer/sp_customizer_settings.php:1943
+msgid "Center Center"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1794
+#: functions/customizer/sp_customizer_settings.php:1944
+msgid "Center Top"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1795
+#: functions/customizer/sp_customizer_settings.php:1945
+msgid "Center Bottom"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1796
+#: functions/customizer/sp_customizer_settings.php:1946
+msgid "Right Center"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1797
+#: functions/customizer/sp_customizer_settings.php:1947
+msgid "Right Top"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1798
+#: functions/customizer/sp_customizer_settings.php:1948
+msgid "Right Bottom"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1799
+#: functions/customizer/sp_customizer_settings.php:1949
+msgid "Left Center"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1800
+#: functions/customizer/sp_customizer_settings.php:1950
+msgid "Left Top"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1801
+#: functions/customizer/sp_customizer_settings.php:1951
+msgid "Left Bottom"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1812
+msgid "Background Attachment"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1818
+msgid "Scroll"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1819
+msgid "Fixed"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1831
+msgid "Wrapper Margin Top"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1844
+msgid "Wrapper Border Radius"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1858
+msgid "Disable Wrapper Shadow"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1873
+msgid "Header BG Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1885
+msgid "Header BG Image"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1898
+msgid "Header BG Repeat"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1918
+msgid "Header BG Size"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1937
+msgid "Header BG Position"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1962
+msgid "Header Social Icon Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1975
+msgid "Header Social Icon Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:1988
+msgid "Header Search Text Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2001
+msgid "Header Search Icon Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2015
+msgid "Menu BG Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2027
+msgid "Menu Border Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2039
+msgid "Menu Text Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2051
+msgid "Menu Text Active/Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2063
+msgid "Menu Dropdown Arrow Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2075
+msgid "Dropdown BG Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2087
+msgid "Dropdown Border Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2099
+msgid "Dropdown Text Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2111
+msgid "Dropdown Text Hover BG"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2123
+msgid "Dropdown Text Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2137
+msgid "Mobile Menu Toggle Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2149
+msgid "Mobile Menu Dropdown BG Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2161
+msgid "Mobile Menu Dropdown Border Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2173
+msgid "Mobile Menu Dropdown Text Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2185
+msgid "Mobile Menu Dropdown Text Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2197
+msgid "Mobile Menu Dropdown Text BG Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2209
+msgid "Mobile Menu Social Icon Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2221
+msgid "Mobile Menu Social Icon Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2235
+msgid "Featured Overlay BG Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2248
+msgid "Featured Overlay BG Transparency"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2262
+msgid "Featured Overlay BG Hover Transparency"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2276
+msgid "Featured Post Title Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2289
+msgid "Featured Post Category Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2302
+msgid "Featured Post Category Separator Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2316
+msgid "Widget Border Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2328
+msgid "Widget Title Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2341
+msgid "Sidebar Social Icon BG Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2353
+msgid "Sidebar Social Icon Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2367
+msgid "Footer Social Icon Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2379
+msgid "Footer Social Icon Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2391
+msgid "Footer Text Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2403
+msgid "Footer Back to Top Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2417
+msgid "Post Title Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2429
+msgid "Post Category Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2441
+msgid "Post Text Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2453
+msgid "Post H1-H6 Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2465
+msgid "Continue Reading Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2477
+msgid "Share Icon Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2489
+msgid "Share Icon Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2501
+msgid "Comment Link Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2513
+msgid "Comment Link Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2526
+msgid "Post Tag BG Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2539
+msgid "Post Tag Text Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2552
+msgid "Post Tag BG Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2565
+msgid "Post Tag Text Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2579
+msgid "Newsletter BG Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2591
+msgid "Newsletter Title Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2603
+msgid "Newsletter Text Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2615
+msgid "Newsletter Input BG Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2627
+msgid "Newsletter Input Text Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2639
+msgid "Newsletter Submit BG Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2651
+msgid "Newsletter Submit Text Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2663
+msgid "Newsletter Submit BG Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2675
+msgid "Newsletter Submit Text Hover Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2689
+msgid "Accent Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2702
+msgid "Category/Archive Box BG Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2714
+msgid "Category/Archive Box Border Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2726
+msgid "Category/Archive Box Browsing Text Color"
+msgstr ""
+
+#: functions/customizer/sp_customizer_settings.php:2738
+msgid "Category/Archive Box Title Text Color"
+msgstr ""
+
+#: inc/templates/about_author.php:8
+msgid "About"
+msgstr ""
+
+#: inc/templates/related_posts.php:24
+msgid "Você talvez goste"
+msgstr "Você pode gostar de..."
+
+#: inc/widgets/about_widget.php:19
+msgid "An About Me Widget"
+msgstr ""
+
+#: inc/widgets/about_widget.php:25
+msgid "Sprout & Spoon: About Me"
+msgstr ""
+
+#: inc/widgets/about_widget.php:99 inc/widgets/ad_widget.php:89
+#: inc/widgets/facebook_widget.php:100 inc/widgets/promo_widget.php:108
+#: inc/widgets/social_widget.php:116
+msgid "Title"
+msgstr ""
+
+#: inc/widgets/about_widget.php:105
+msgid "Image URL"
+msgstr ""
+
+#: inc/widgets/about_widget.php:107
+msgid ""
+"Enter the image URL you want to use. You can upload your image via Media > "
+"Add New"
+msgstr ""
+
+#: inc/widgets/about_widget.php:112
+msgid "Image Link"
+msgstr ""
+
+#: inc/widgets/about_widget.php:114
+msgid "Enter a link you want the about me image to go to."
+msgstr ""
+
+#: inc/widgets/about_widget.php:119
+msgid "About me text"
+msgstr ""
+
+#: inc/widgets/about_widget.php:125
+msgid "Autograph Image URL"
+msgstr ""
+
+#: inc/widgets/ad_widget.php:19
+msgid "Paste in your ad code to display your ad"
+msgstr ""
+
+#: inc/widgets/ad_widget.php:25
+msgid "Sprout & Spoon: Ad widget"
+msgstr ""
+
+#: inc/widgets/ad_widget.php:95
+msgid "Ad Code"
+msgstr ""
+
+#: inc/widgets/ad_widget.php:101 inc/widgets/facebook_widget.php:131
+msgid "Show Border around Widget?"
+msgstr ""
+
+#: inc/widgets/facebook_widget.php:19
+msgid "A widget that displays a Facebook Like Box"
+msgstr ""
+
+#: inc/widgets/facebook_widget.php:25
+msgid "Sprout & Spoon: Facebook Like Box"
+msgstr ""
+
+#: inc/widgets/facebook_widget.php:106
+msgid "Facebook Page URL"
+msgstr ""
+
+#: inc/widgets/facebook_widget.php:113
+msgid "Show Faces"
+msgstr ""
+
+#: inc/widgets/facebook_widget.php:119
+msgid "Show Stream"
+msgstr ""
+
+#: inc/widgets/facebook_widget.php:125
+msgid "Show Page Cover Image"
+msgstr ""
+
+#: inc/widgets/post_widget.php:19
+msgid ""
+"A widget that displays your latest posts from all categories or a certain"
+msgstr ""
+
+#: inc/widgets/post_widget.php:25
+msgid "Sprout & Spoon: Latest Posts"
+msgstr ""
+
+#: inc/widgets/post_widget.php:102
+msgid "Latest Posts"
+msgstr ""
+
+#: inc/widgets/post_widget.php:107
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/post_widget.php:113
+msgid "Choose Layout"
+msgstr ""
+
+#: inc/widgets/post_widget.php:115
+msgid "Big Thumbnail"
+msgstr ""
+
+#: inc/widgets/post_widget.php:116
+msgid "Small Thumbnail"
+msgstr ""
+
+#: inc/widgets/post_widget.php:122
+msgid "Filter by Category"
+msgstr ""
+
+#: inc/widgets/post_widget.php:134
+msgid "Number of posts to show:"
+msgstr ""
+
+#: inc/widgets/promo_widget.php:19
+msgid "Display a promo box with an image and link"
+msgstr ""
+
+#: inc/widgets/promo_widget.php:25
+msgid "Sprout & Spoon: Promo Box"
+msgstr ""
+
+#: inc/widgets/promo_widget.php:114
+msgid "Background Image URL"
+msgstr ""
+
+#: inc/widgets/promo_widget.php:116
+msgid ""
+"Enter the background image URL you want to use. You can upload your "
+"background image via Media > Add New"
+msgstr ""
+
+#: inc/widgets/promo_widget.php:121
+msgid "Promo Text"
+msgstr ""
+
+#: inc/widgets/promo_widget.php:127
+msgid "Promo Link"
+msgstr ""
+
+#: inc/widgets/promo_widget.php:129
+msgid "Enter a link you want the promo box to go to."
+msgstr ""
+
+#: inc/widgets/promo_widget.php:134
+msgid "Promo Box Height"
+msgstr ""
+
+#: inc/widgets/promo_widget.php:140
+msgid "Promo Box Margin Bottom"
+msgstr ""
+
+#: inc/widgets/promo_widget.php:146
+msgid "Open link in a new tab?"
+msgstr ""
+
+#: inc/widgets/promo_widget.php:152
+msgid "Show border around widget?"
+msgstr ""
+
+#: inc/widgets/social_widget.php:19
+msgid "A widget that displays your social icons"
+msgstr ""
+
+#: inc/widgets/social_widget.php:25
+msgid "Sprout & Spoon: Social Icons"
+msgstr ""
+
+#: inc/widgets/social_widget.php:120
+msgid "Note: Set your social links in the Customizer"
+msgstr ""
+
+#: inc/widgets/social_widget.php:123
+msgid "Show Facebook"
+msgstr ""
+
+#: inc/widgets/social_widget.php:128
+msgid "Show Twitter"
+msgstr ""
+
+#: inc/widgets/social_widget.php:133
+msgid "Show Instagram"
+msgstr ""
+
+#: inc/widgets/social_widget.php:138
+msgid "Show Pinterest"
+msgstr ""
+
+#: inc/widgets/social_widget.php:143
+msgid "Show Bloglovin"
+msgstr ""
+
+#: inc/widgets/social_widget.php:148
+msgid "Show Google Plus"
+msgstr ""
+
+#: inc/widgets/social_widget.php:153
+msgid "Show Tumblr"
+msgstr ""
+
+#: inc/widgets/social_widget.php:158
+msgid "Show Youtube"
+msgstr ""
+
+#: inc/widgets/social_widget.php:163
+msgid "Show Dribbble"
+msgstr ""
+
+#: inc/widgets/social_widget.php:168
+msgid "Show Soundcloud"
+msgstr ""
+
+#: inc/widgets/social_widget.php:173
+msgid "Show Vimeo"
+msgstr ""
+
+#: inc/widgets/social_widget.php:178
+msgid "Show Linkedin"
+msgstr ""
+
+#: inc/widgets/social_widget.php:183
+msgid "Show RSS"
+msgstr ""
+
+#: search.php:5
+msgid "Search results for:"
+msgstr ""
+
+#: searchform.php:2
+msgid "Search and hit enter..."
+msgstr ""
+
+#: tag.php:5
+msgid "Browsing Tag:"
+msgstr ""

@@ -1,0 +1,53 @@
+/**************************************************/
+/** CUSTOM STYLING FOR THE WORDPRESS CUSTOMIZER ***/
+/**************************************************/
+#customize-control-featured_id:after {
+	content:"Note: Separate each ID with a comma. The IDs you put in here will override the featured category option above.";
+	font-size:12px;
+	font-style:italic;
+	color:#888;
+}
+
+#customize-control-promo_border{
+	border-bottom:2px solid #ddd;
+	padding-bottom:6px;
+}
+
+#customize-control-promo1_url {
+	border-bottom: 2px solid #ddd;
+	padding-bottom: 18px;
+	margin-bottom: 12px;
+}
+#customize-control-promo1_url:after {
+	content:"Note: Use http:// in front of your url.";
+	font-size:12px;
+	font-style:italic;
+	color:#888;
+}
+
+#customize-control-promo2_url {
+	border-bottom: 2px solid #ddd;
+	padding-bottom: 18px;
+	margin-bottom: 12px;
+}
+
+#customize-control-promo2_url:after {
+	content:"Note: Use http:// in front of your url.";
+	font-size:12px;
+	font-style:italic;
+	color:#888;
+}
+
+#customize-control-promo3_url:after {
+	content:"Note: Use http:// in front of your url.";
+	font-size:12px;
+	font-style:italic;
+	color:#888;
+}
+
+#customize-control-shop_products_per_page:after {
+	content:"Please note Customizer preview will not immediately reflect change, simply save and refresh to see change take effect.";
+	font-size:12px;
+	font-style:italic;
+	color:#888;
+}
