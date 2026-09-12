@@ -1,39 +1,6 @@
 # === Pastas locais deste repo que não devem ser versionadas ===
 # Dump/backup completo do WordPress baixado via FTP (wp-admin, wp-content, etc.)
 /backup-wordpress/
-# Tema baixado solto na raiz via FTP
-/generatepress/
-
-# === WordPress core ===
-/wp-admin/
-/wp-includes/
-/wp-*.php
-!wp-content/
-xmlrpc.php
-wp-config.php
-.htaccess
-
-# === wp-content ===
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.backupdb/
-wp-content/advanced-cache.php
-wp-content/wp-cache-config.php
-wp-content/mu-plugins/
-sitemap.xml
-sitemap.xml.gz
-
-# === Plugins que geram cache/backup próprios ===
-wp-content/plugins/litespeed-cache/
-wp-content/plugins/really-simple-ssl/
-wp-content/cache/wp-rocket/
-wp-content/uploads/backwpup*/
-wp-content/plugins/wp-super-cache/wp-cache-config.php
-wp-content/updraft/
 
 # === Logs e arquivos temporários ===
 *.log
