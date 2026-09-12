@@ -1,0 +1,1025 @@
+/*
+Theme Name: Comideria 2027
+Theme URI: https://comideria.com
+Author: Comideria
+Author URI: https://comideria.com
+Description: Tema editorial minimalista para o Comideria — Food XP. Construído para performance máxima (LCP/INP/CLS), acessibilidade e SEO técnico, priorizando fotografia e tipografia sobre elementos de interface. Preserva a taxonomia histórica de categorias (Review, Receitas e suas subcategorias de cozinha e cidade).
+Version: 1.0.0
+Requires at least: 6.4
+Requires PHP: 7.4
+Tested up to: 6.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: comideria
+Tags: blog, food, editorial, one-column, custom-menu, featured-images, threaded-comments, translation-ready
+
+Comideria 2027 é um tema livre, distribuído sob a mesma licença do WordPress.
+*/
+
+/* =========================================================================
+   ÍNDICE
+   1. Reset / base
+   2. Tokens de design (cores, tipografia, espaçamento)
+   3. Tipografia
+   4. Layout / utilitários
+   5. Header
+   6. Navegação (menu, sem JavaScript — usa <details>/<summary>)
+   7. Breadcrumbs
+   8. Cards de post / grids
+   9. Chips de categoria
+   10. Conteúdo de post único (.entry-content)
+   11. Meta de post / autor / data
+   12. Paginação
+   13. Comentários
+   14. Formulário de busca
+   15. Footer
+   16. Estados de foco / acessibilidade
+   17. Media queries (mobile-first)
+   ========================================================================= */
+
+/* -------------------------------------------------------------------------
+   1. Reset / base
+   ------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+img,
+picture,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Imagens do conteúdo do editor precisam permanecer inline */
+.entry-content img {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+a {
+	color: inherit;
+}
+
+/* -------------------------------------------------------------------------
+   2. Tokens de design
+   ------------------------------------------------------------------------- */
+:root {
+	/* Paleta extraída da identidade visual (Comideria / Food XP) */
+	--color-bg: #fdfbf8;
+	--color-bg-elevated: #ffffff;
+	--color-ink: #25221d;
+	--color-muted: #6b6259;
+	--color-border: #e7e1d9;
+	--color-accent: #c2661d; /* terracota — decorativo, texto grande, ícones */
+	--color-accent-text: #9a4a14; /* terracota escurecido — contraste AA para texto/links/botões */
+	--color-accent-contrast: #ffffff;
+
+	--font-serif: Georgia, "Iowan Old Style", "Palatino Linotype", "URW Palladio L", serif;
+	--font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 0.75rem;
+	--space-4: 1rem;
+	--space-5: 1.5rem;
+	--space-6: 2rem;
+	--space-7: 3rem;
+	--space-8: 4.5rem;
+
+	--maxw-content: 1220px;
+	--maxw-reading: 700px;
+	--radius: 3px;
+	--border: 1px solid var(--color-border);
+}
+
+/* -------------------------------------------------------------------------
+   3. Tipografia
+   ------------------------------------------------------------------------- */
+body {
+	font-family: var(--font-serif);
+	font-size: 1.0625rem;
+	line-height: 1.65;
+	color: var(--color-ink);
+	background: var(--color-bg);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-serif);
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0 0 var(--space-3);
+	text-wrap: balance;
+}
+
+h1 {
+	font-size: clamp(1.9rem, 4vw, 2.75rem);
+}
+
+h2 {
+	font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+p {
+	margin: 0 0 var(--space-4);
+}
+
+a {
+	text-decoration-color: var(--color-border);
+	text-underline-offset: 3px;
+}
+
+.entry-content a,
+.site-footer a,
+.comment-content a {
+	color: var(--color-accent-text);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+}
+
+.entry-content a:hover,
+.comment-content a:hover {
+	text-decoration-thickness: 2px;
+}
+
+small,
+.meta {
+	font-family: var(--font-sans);
+	font-size: 0.8125rem;
+	color: var(--color-muted);
+}
+
+/* -------------------------------------------------------------------------
+   4. Layout / utilitários
+   ------------------------------------------------------------------------- */
+.wrap {
+	max-width: var(--maxw-content);
+	margin-inline: auto;
+	padding-inline: var(--space-5);
+}
+
+.section {
+	padding-block: var(--space-7);
+}
+
+.section-heading {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: var(--space-4);
+	margin-bottom: var(--space-5);
+	border-bottom: var(--border);
+	padding-bottom: var(--space-3);
+}
+
+.section-heading h2 {
+	margin: 0;
+}
+
+.section-heading--stacked {
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--space-2);
+}
+
+.section-heading .see-all {
+	font-family: var(--font-sans);
+	font-size: 0.875rem;
+	white-space: nowrap;
+	color: var(--color-accent-text);
+	text-decoration: none;
+	border-bottom: 1px solid currentColor;
+}
+
+.screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap;
+}
+
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: var(--space-4);
+	z-index: 999;
+	background: var(--color-ink);
+	color: #fff;
+	padding: var(--space-3) var(--space-4);
+	border-radius: var(--radius);
+	font-family: var(--font-sans);
+	transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+	top: var(--space-4);
+}
+
+/* -------------------------------------------------------------------------
+   5. Header
+   ------------------------------------------------------------------------- */
+.site-header {
+	border-bottom: var(--border);
+	background: var(--color-bg-elevated);
+}
+
+.site-header .wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-5);
+	padding-block: var(--space-4);
+}
+
+.site-branding {
+	display: flex;
+	flex-direction: column;
+	line-height: 1;
+}
+
+.site-branding a {
+	text-decoration: none;
+	color: var(--color-ink);
+}
+
+.site-title {
+	margin: 0;
+	font-family: var(--font-serif);
+	font-weight: 700;
+	font-size: 1.65rem;
+	letter-spacing: 0.01em;
+}
+
+.site-tagline {
+	margin-top: 0.35rem;
+	font-family: var(--font-sans);
+	font-size: 0.68rem;
+	font-weight: 600;
+	letter-spacing: 0.22em;
+	color: var(--color-accent-text);
+	text-transform: uppercase;
+}
+
+.custom-logo-link img {
+	max-height: 44px;
+	width: auto;
+}
+
+/* -------------------------------------------------------------------------
+   6. Navegação
+   ------------------------------------------------------------------------- */
+.main-navigation {
+	font-family: var(--font-sans);
+	font-size: 0.9375rem;
+}
+
+.main-navigation ul {
+	display: flex;
+	align-items: center;
+	gap: var(--space-6);
+}
+
+.main-navigation a {
+	text-decoration: none;
+	padding: var(--space-2) 0;
+	border-bottom: 2px solid transparent;
+}
+
+.main-navigation a:hover,
+.main-navigation .current-menu-item > a,
+.main-navigation .current-menu-ancestor > a {
+	border-bottom-color: var(--color-accent);
+}
+
+.main-navigation .sub-menu {
+	display: none;
+}
+
+/* Menu mobile: sem JavaScript, via <details>/<summary> nativo */
+.nav-toggle {
+	display: none;
+}
+
+.nav-toggle summary {
+	cursor: pointer;
+	list-style: none;
+	font-family: var(--font-sans);
+	font-weight: 600;
+	font-size: 0.9375rem;
+	padding: var(--space-2) 0;
+}
+
+.nav-toggle summary::-webkit-details-marker {
+	display: none;
+}
+
+.nav-toggle summary::after {
+	content: "";
+	display: inline-block;
+	width: 0.5em;
+	height: 0.5em;
+	margin-left: var(--space-2);
+	border-right: 2px solid currentColor;
+	border-bottom: 2px solid currentColor;
+	transform: rotate(45deg);
+	vertical-align: 0.15em;
+}
+
+.nav-toggle[open] summary::after {
+	transform: rotate(-135deg);
+}
+
+.nav-toggle .mobile-menu {
+	padding: var(--space-2) 0 var(--space-4);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+}
+
+.nav-toggle .mobile-menu a {
+	display: block;
+	padding: var(--space-3) 0;
+	text-decoration: none;
+	border-bottom: var(--border);
+	min-height: 44px;
+}
+
+.nav-toggle .mobile-menu .sub-menu {
+	padding-left: var(--space-4);
+	border-left: 2px solid var(--color-border);
+}
+
+/* -------------------------------------------------------------------------
+   7. Breadcrumbs
+   ------------------------------------------------------------------------- */
+.breadcrumbs {
+	font-family: var(--font-sans);
+	font-size: 0.8125rem;
+	color: var(--color-muted);
+	margin-bottom: var(--space-4);
+}
+
+.breadcrumbs ol {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-1);
+}
+
+.breadcrumbs li:not(:last-child)::after {
+	content: "/";
+	margin-left: var(--space-1);
+	color: var(--color-border);
+}
+
+.breadcrumbs a {
+	text-decoration: none;
+	color: var(--color-muted);
+}
+
+.breadcrumbs a:hover {
+	color: var(--color-accent-text);
+}
+
+/* -------------------------------------------------------------------------
+   8. Cards de post / grids
+   ------------------------------------------------------------------------- */
+.post-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: var(--space-6) var(--space-5);
+}
+
+.post-card {
+	display: flex;
+	flex-direction: column;
+}
+
+.post-card .card-media {
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	background: var(--color-border);
+	margin-bottom: var(--space-3);
+}
+
+.post-card .card-media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.post-card .card-kicker {
+	font-family: var(--font-sans);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--color-accent-text);
+	text-decoration: none;
+	margin-bottom: var(--space-1);
+}
+
+.post-card h3 {
+	margin: 0 0 var(--space-2);
+	font-size: 1.15rem;
+	line-height: 1.3;
+}
+
+.post-card h3 a {
+	text-decoration: none;
+	color: var(--color-ink);
+}
+
+.post-card h3 a:hover {
+	color: var(--color-accent-text);
+}
+
+.post-card .card-excerpt {
+	font-family: var(--font-sans);
+	font-size: 0.875rem;
+	color: var(--color-muted);
+	margin: 0;
+}
+
+/* Destaque principal da home */
+.hero-feature {
+	display: grid;
+	grid-template-columns: 1.2fr 1fr;
+	gap: var(--space-6);
+	align-items: center;
+	margin-bottom: var(--space-8);
+}
+
+.hero-feature .card-media {
+	aspect-ratio: 16 / 11;
+	margin-bottom: 0;
+}
+
+.hero-feature h1,
+.hero-feature h2 {
+	font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+}
+
+.hero-feature .hero-title-link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.hero-feature .card-excerpt {
+	font-family: var(--font-serif);
+	font-size: 1.0625rem;
+	color: var(--color-ink);
+}
+
+/* -------------------------------------------------------------------------
+   9. Chips de categoria
+   ------------------------------------------------------------------------- */
+.category-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-2);
+	margin-bottom: var(--space-6);
+	font-family: var(--font-sans);
+}
+
+.category-chips a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	padding: var(--space-2) var(--space-4);
+	border: var(--border);
+	border-radius: 999px;
+	text-decoration: none;
+	font-size: 0.8125rem;
+	color: var(--color-ink);
+}
+
+.category-chips a:hover,
+.category-chips a.is-current {
+	border-color: var(--color-accent);
+	color: var(--color-accent-text);
+}
+
+.category-chips .chip-count {
+	color: var(--color-muted);
+}
+
+/* -------------------------------------------------------------------------
+   10. Conteúdo de post único
+   ------------------------------------------------------------------------- */
+.single-article {
+	max-width: var(--maxw-reading);
+	margin-inline: auto;
+	padding-block: var(--space-7);
+}
+
+.entry-header {
+	margin-bottom: var(--space-5);
+}
+
+.entry-kicker {
+	display: inline-block;
+	font-family: var(--font-sans);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--color-accent-text);
+	text-decoration: none;
+	margin-bottom: var(--space-3);
+}
+
+.entry-title {
+	margin-bottom: var(--space-3);
+}
+
+.entry-meta {
+	font-family: var(--font-sans);
+	font-size: 0.875rem;
+	color: var(--color-muted);
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-2) var(--space-4);
+}
+
+.entry-meta a {
+	color: var(--color-muted);
+	text-decoration: none;
+	border-bottom: 1px solid var(--color-border);
+}
+
+.featured-media {
+	margin: var(--space-5) calc(var(--maxw-reading) * -0.12) var(--space-6);
+}
+
+.entry-content {
+	font-size: 1.0625rem;
+}
+
+.entry-content > * + * {
+	margin-top: var(--space-4);
+}
+
+.entry-content h2,
+.entry-content h3 {
+	margin-top: var(--space-7);
+}
+
+.entry-content img,
+.entry-content figure {
+	margin-inline: auto;
+}
+
+.entry-content figure {
+	margin-block: var(--space-6);
+}
+
+.entry-content figcaption,
+.wp-caption-text {
+	font-family: var(--font-sans);
+	font-size: 0.8125rem;
+	color: var(--color-muted);
+	text-align: center;
+	margin-top: var(--space-2);
+}
+
+.entry-content blockquote {
+	margin: var(--space-6) 0;
+	padding-left: var(--space-5);
+	border-left: 3px solid var(--color-accent);
+	font-style: italic;
+	color: var(--color-muted);
+}
+
+.entry-content ul,
+.entry-content ol {
+	padding-left: 1.4em;
+	list-style: revert;
+}
+
+.entry-content table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: var(--font-sans);
+	font-size: 0.9375rem;
+}
+
+.entry-content th,
+.entry-content td {
+	border: var(--border);
+	padding: var(--space-2) var(--space-3);
+	text-align: left;
+}
+
+.entry-tags {
+	margin-top: var(--space-7);
+	padding-top: var(--space-5);
+	border-top: var(--border);
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-2);
+	font-family: var(--font-sans);
+	font-size: 0.8125rem;
+}
+
+.entry-tags a {
+	text-decoration: none;
+	color: var(--color-muted);
+	border: var(--border);
+	border-radius: 999px;
+	padding: 0.3em var(--space-3);
+}
+
+.entry-tags a:hover {
+	color: var(--color-accent-text);
+	border-color: var(--color-accent);
+}
+
+.author-box {
+	display: flex;
+	gap: var(--space-4);
+	align-items: center;
+	margin-top: var(--space-6);
+	padding: var(--space-5);
+	border: var(--border);
+	font-family: var(--font-sans);
+	font-size: 0.9375rem;
+}
+
+.author-box img {
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.related-posts {
+	max-width: var(--maxw-content);
+	margin-inline: auto;
+	padding-inline: var(--space-5);
+	padding-bottom: var(--space-8);
+}
+
+/* -------------------------------------------------------------------------
+   12. Paginação
+   ------------------------------------------------------------------------- */
+.pagination {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--space-4);
+	font-family: var(--font-sans);
+	font-size: 0.9375rem;
+	margin-top: var(--space-7);
+	padding-top: var(--space-5);
+	border-top: var(--border);
+}
+
+.pagination a,
+.pagination span {
+	padding: var(--space-2) var(--space-3);
+}
+
+.pagination a {
+	text-decoration: none;
+	color: var(--color-accent-text);
+}
+
+.pagination .page-numbers.current {
+	font-weight: 700;
+}
+
+/* -------------------------------------------------------------------------
+   13. Comentários
+   ------------------------------------------------------------------------- */
+.comments-area {
+	max-width: var(--maxw-reading);
+	margin-inline: auto;
+	padding-bottom: var(--space-8);
+	font-family: var(--font-sans);
+}
+
+.comment-list {
+	margin: var(--space-5) 0;
+}
+
+.comment-body {
+	padding: var(--space-4) 0;
+	border-top: var(--border);
+}
+
+.comment-author {
+	font-weight: 700;
+	font-size: 0.9375rem;
+}
+
+.comment-metadata {
+	font-size: 0.8125rem;
+	color: var(--color-muted);
+	margin-bottom: var(--space-2);
+}
+
+.comment-reply-link {
+	font-size: 0.8125rem;
+	color: var(--color-accent-text);
+}
+
+.comment-respond input[type="text"],
+.comment-respond input[type="email"],
+.comment-respond input[type="url"],
+.comment-respond textarea {
+	width: 100%;
+	padding: var(--space-3);
+	border: var(--border);
+	border-radius: var(--radius);
+	font-family: var(--font-sans);
+	font-size: 1rem;
+	background: var(--color-bg-elevated);
+	color: var(--color-ink);
+}
+
+.comment-respond label {
+	display: block;
+	font-size: 0.8125rem;
+	margin-bottom: var(--space-1);
+}
+
+.comment-respond p {
+	margin-bottom: var(--space-4);
+}
+
+/* -------------------------------------------------------------------------
+   Botões
+   ------------------------------------------------------------------------- */
+.btn,
+.comment-respond .form-submit input,
+#searchform button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-sans);
+	font-weight: 600;
+	font-size: 0.9375rem;
+	padding: 0.75em 1.5em;
+	background: var(--color-accent-text);
+	color: var(--color-accent-contrast);
+	border: none;
+	border-radius: var(--radius);
+	text-decoration: none;
+	cursor: pointer;
+	min-height: 44px;
+}
+
+.btn:hover,
+.comment-respond .form-submit input:hover,
+#searchform button:hover {
+	background: var(--color-ink);
+}
+
+/* -------------------------------------------------------------------------
+   14. Busca
+   ------------------------------------------------------------------------- */
+.search-toggle {
+	display: inline;
+}
+
+.search-toggle summary {
+	cursor: pointer;
+	list-style: none;
+	font-family: var(--font-sans);
+	font-size: 0.9375rem;
+}
+
+.search-toggle summary::-webkit-details-marker {
+	display: none;
+}
+
+.search-toggle[open] {
+	position: relative;
+}
+
+#searchform {
+	display: flex;
+	gap: var(--space-2);
+	position: absolute;
+	right: 0;
+	top: calc(100% + var(--space-2));
+	background: var(--color-bg-elevated);
+	border: var(--border);
+	padding: var(--space-3);
+	z-index: 10;
+	width: min(320px, 90vw);
+}
+
+#searchform label {
+	flex: 1;
+}
+
+#searchform input[type="search"] {
+	width: 100%;
+	padding: var(--space-2) var(--space-3);
+	border: var(--border);
+	border-radius: var(--radius);
+	font-size: 1rem;
+}
+
+.search-results-summary {
+	font-family: var(--font-sans);
+	color: var(--color-muted);
+	margin-bottom: var(--space-6);
+}
+
+/* -------------------------------------------------------------------------
+   404 / estados vazios
+   ------------------------------------------------------------------------- */
+.no-results {
+	max-width: var(--maxw-reading);
+	margin-inline: auto;
+	padding-block: var(--space-8);
+	text-align: center;
+}
+
+/* -------------------------------------------------------------------------
+   15. Footer
+   ------------------------------------------------------------------------- */
+.site-footer {
+	border-top: var(--border);
+	background: var(--color-bg-elevated);
+	font-family: var(--font-sans);
+	font-size: 0.875rem;
+	color: var(--color-muted);
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: 1.3fr 1fr 1fr;
+	gap: var(--space-6);
+	padding-block: var(--space-7);
+}
+
+.footer-grid h2 {
+	font-family: var(--font-sans);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--color-ink);
+	margin-bottom: var(--space-3);
+}
+
+.footer-grid ul li {
+	margin-bottom: var(--space-2);
+}
+
+.footer-grid a {
+	text-decoration: none;
+	color: var(--color-muted);
+}
+
+.footer-grid a:hover {
+	color: var(--color-accent-text);
+}
+
+.footer-brand .site-title {
+	font-size: 1.35rem;
+}
+
+.footer-social {
+	display: flex;
+	gap: var(--space-3);
+	margin-top: var(--space-3);
+}
+
+.footer-social a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border: var(--border);
+	border-radius: 50%;
+}
+
+.site-footer .bottom-bar {
+	border-top: var(--border);
+	padding-block: var(--space-4);
+	text-align: center;
+}
+
+/* -------------------------------------------------------------------------
+   16. Foco / acessibilidade
+   ------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+	outline: 2px solid var(--color-accent-text);
+	outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition-duration: 0.001ms !important;
+		animation-duration: 0.001ms !important;
+	}
+}
+
+/* -------------------------------------------------------------------------
+   17. Media queries
+   ------------------------------------------------------------------------- */
+@media (max-width: 781px) {
+	.main-navigation {
+		display: none;
+	}
+
+	.nav-toggle {
+		display: block;
+	}
+
+	.hero-feature {
+		grid-template-columns: 1fr;
+	}
+
+	.footer-grid {
+		grid-template-columns: 1fr;
+		gap: var(--space-5);
+	}
+
+	.featured-media {
+		margin-inline: calc(var(--space-5) * -1);
+	}
+}
+
+@media (min-width: 782px) {
+	.nav-toggle {
+		display: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.wrap {
+		padding-inline: var(--space-4);
+	}
+
+	.post-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* -------------------------------------------------------------------------
+   Tema escuro (prefers-color-scheme) — mantém excelente contraste
+   ------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-bg: #18160f;
+		--color-bg-elevated: #211d17;
+		--color-ink: #f2ece2;
+		--color-muted: #a89e91;
+		--color-border: #3a352c;
+		--color-accent: #e08942;
+		--color-accent-text: #f0a35f;
+		--color-accent-contrast: #18160f;
+	}
+}
+
+/* -------------------------------------------------------------------------
+   Impressão
+   ------------------------------------------------------------------------- */
+@media print {
+	.site-header,
+	.site-footer,
+	.related-posts,
+	.comments-area,
+	.category-chips,
+	.breadcrumbs {
+		display: none;
+	}
+}

@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"color": {
+			"custom": false,
+			"customGradient": false,
+			"defaultPalette": false,
+			"palette": [
+				{ "slug": "background", "name": "Fundo", "color": "#fdfbf8" },
+				{ "slug": "ink", "name": "Tinta", "color": "#25221d" },
+				{ "slug": "muted", "name": "Neutro", "color": "#6b6259" },
+				{ "slug": "accent", "name": "Terracota", "color": "#9a4a14" }
+			]
+		},
+		"typography": {
+			"customFontSize": false,
+			"fontFamilies": [
+				{
+					"slug": "serif",
+					"name": "Serif editorial",
+					"fontFamily": "Georgia, 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', serif"
+				},
+				{
+					"slug": "sans",
+					"name": "Sans (interface)",
+					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+				}
+			]
+		},
+		"spacing": {
+			"units": [ "rem", "%", "vw" ]
+		},
+		"layout": {
+			"contentSize": "700px",
+			"wideSize": "1220px"
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--background)",
+			"text": "var(--wp--preset--color--ink)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--serif)"
+		}
+	}
+}
