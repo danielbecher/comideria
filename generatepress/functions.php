@@ -104,6 +104,17 @@ require $theme_dir . '/inc/class-theme-update.php';
 require $theme_dir . '/inc/class-rest.php';
 require $theme_dir . '/inc/deprecated.php';
 
+/**
+ * Comideria: Google Analytics (gtag.js).
+ *
+ * ATENÇÃO: isto foi adicionado direto no tema GeneratePress (não num child
+ * theme). Uma atualização do tema pelo repositório oficial SUBSTITUI este
+ * functions.php e apaga esta linha (o arquivo inc/comideria-analytics.php
+ * em si não é apagado, só para de ser carregado). Se atualizar o tema,
+ * reaplique esta linha depois.
+ */
+require $theme_dir . '/inc/comideria-analytics.php';
+
 if ( is_admin() ) {
 	require $theme_dir . '/inc/meta-box.php';
 	require $theme_dir . '/inc/class-dashboard.php';
