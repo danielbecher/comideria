@@ -84,18 +84,24 @@ a {
    2. Tokens de design
    ------------------------------------------------------------------------- */
 :root {
-	/* Paleta extraída da identidade visual (Comideria / Food XP) */
-	--color-bg: #fdfbf8;
+	/* V3 — direção "cardápio de quadro-negro moderno": preto quase-puro,
+	   papel limpo (não creme), terracota vívido usado em BLOCO (preenchido),
+	   não só como linha fina. Verde sargaço continua como o pilar Receitas. */
+	--color-bg: #faf7f2;
 	--color-bg-elevated: #ffffff;
-	--color-ink: #25221d;
-	--color-muted: #6b6259;
-	--color-border: #e7e1d9;
-	--color-accent: #c2661d; /* terracota — decorativo, texto grande, ícones */
-	--color-accent-text: #9a4a14; /* terracota escurecido — contraste AA para texto/links/botões */
+	--color-ink: #17140f;
+	--color-muted: #6f665a;
+	--color-border: #e6ddd0;
+	--color-sand: #f2e2c8; /* segundo tom neutro-quente, pra variar blocos de fundo */
+	--color-accent: #c2551a; /* terracota vívido — preenchimentos, botões, badges */
+	--color-accent-text: #8a3c10; /* terracota escurecido — contraste AAA para texto/links */
 	--color-accent-contrast: #ffffff;
+	--color-pillar-receitas: #3f5a42; /* verde sargaço — pilar Receitas, contraste AA */
+	--color-pillar-receitas-bright: #5c7d5f; /* variante clara — decorativo/ícones */
 
 	--font-serif: Georgia, "Iowan Old Style", "Palatino Linotype", "URW Palladio L", serif;
 	--font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	--font-display: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
 	--space-1: 0.25rem;
 	--space-2: 0.5rem;
@@ -125,27 +131,38 @@ body {
 	text-rendering: optimizeLegibility;
 }
 
+/* Assinatura gráfica do site: uma barra sólida no topo de toda página. */
+body::before {
+	content: "";
+	display: block;
+	height: 6px;
+	background: var(--color-accent);
+}
+
 h1,
 h2,
 h3,
 h4 {
-	font-family: var(--font-serif);
-	font-weight: 700;
-	line-height: 1.2;
+	font-family: var(--font-display);
+	font-weight: 800;
+	line-height: 1.05;
+	letter-spacing: -0.01em;
 	margin: 0 0 var(--space-3);
 	text-wrap: balance;
 }
 
 h1 {
-	font-size: clamp(1.9rem, 4vw, 2.75rem);
+	font-size: clamp(2.4rem, 6vw, 4rem);
 }
 
 h2 {
-	font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+	font-size: clamp(1.7rem, 3.4vw, 2.35rem);
 }
 
 h3 {
-	font-size: 1.25rem;
+	font-size: 1.3rem;
+	font-weight: 700;
+	letter-spacing: -0.005em;
 }
 
 p {
@@ -263,43 +280,26 @@ small,
 
 .site-branding {
 	display: flex;
-	flex-direction: column;
-	line-height: 1;
+	align-items: center;
 }
 
-.site-branding a {
-	text-decoration: none;
-	color: var(--color-ink);
-}
-
-.site-title {
-	margin: 0;
-	font-family: var(--font-serif);
-	font-weight: 700;
-	font-size: 1.65rem;
-	letter-spacing: 0.01em;
-}
-
-.site-tagline {
-	margin-top: 0.35rem;
-	font-family: var(--font-sans);
-	font-size: 0.68rem;
-	font-weight: 600;
-	letter-spacing: 0.22em;
-	color: var(--color-accent-text);
-	text-transform: uppercase;
-}
-
-.custom-logo-link img {
-	max-height: 44px;
+.custom-logo-link img,
+.site-logo-link img {
+	display: block;
+	max-height: 62px;
 	width: auto;
+}
+
+.footer-logo img {
+	max-height: 50px;
 }
 
 /* -------------------------------------------------------------------------
    6. Navegação
    ------------------------------------------------------------------------- */
 .main-navigation {
-	font-family: var(--font-sans);
+	font-family: var(--font-display);
+	font-weight: 700;
 	font-size: 0.9375rem;
 }
 
@@ -411,11 +411,16 @@ small,
 }
 
 /* -------------------------------------------------------------------------
-   8. Cards de post / grids
+   8. Índice de posts — grid em mosaico: o primeiro item de cada seção é
+   grande (como a chamada de capa de uma revista), os demais formam uma
+   grade menor ao redor. Sem sombra, sem cantos arredondados repetidos em
+   cada item — é a foto e o espaço em branco que separam um post do outro,
+   não uma caixa.
    ------------------------------------------------------------------------- */
 .post-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-flow: dense;
 	gap: var(--space-6) var(--space-5);
 }
 
@@ -437,56 +442,123 @@ small,
 	object-fit: cover;
 }
 
-.post-card .card-kicker {
+@media (min-width: 641px) {
+	.post-grid .post-card:first-child {
+		grid-column: span 2;
+		grid-row: span 2;
+	}
+
+	.post-grid .post-card:first-child .card-media {
+		aspect-ratio: 4 / 3.4;
+	}
+
+	.post-grid .post-card:first-child .card-title {
+		font-size: 1.6rem;
+	}
+}
+
+/* Placeholder único do tema: post sem imagem destacada nem foto no corpo. */
+.media-placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background: var(--color-border);
+	color: var(--color-muted);
+}
+
+.media-placeholder svg {
+	width: 22%;
+	max-width: 72px;
+	height: auto;
+	opacity: 0.8;
+}
+
+/* Indicador de categoria: traço colorido + nome em minúsculas normais — a
+   cor identifica o pilar editorial (Review/Receitas), não é enfeite. */
+/* Badge preenchido: mais gráfico que um rótulo de texto solto, e a cor do
+   preenchimento identifica o pilar editorial (Review/Receitas). */
+.kicker {
+	display: inline-flex;
+	align-items: center;
 	font-family: var(--font-sans);
 	font-size: 0.75rem;
 	font-weight: 700;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	color: var(--color-accent-text);
+	line-height: 1;
+	padding: 0.42em 0.75em;
+	border-radius: 3px;
+	background: var(--color-muted);
+	color: #fff;
 	text-decoration: none;
-	margin-bottom: var(--space-1);
 }
 
-.post-card h3 {
+.kicker--review {
+	background: var(--color-accent-text);
+}
+
+.kicker--receitas {
+	background: var(--color-pillar-receitas);
+}
+
+.post-card .card-kicker {
+	align-self: flex-start;
+	margin-bottom: var(--space-2);
+}
+
+.post-card .card-title {
 	margin: 0 0 var(--space-2);
 	font-size: 1.15rem;
-	line-height: 1.3;
+	line-height: 1.25;
 }
 
-.post-card h3 a {
+.post-card .card-title a {
 	text-decoration: none;
 	color: var(--color-ink);
 }
 
-.post-card h3 a:hover {
+.post-card .card-title a:hover {
 	color: var(--color-accent-text);
 }
 
 .post-card .card-excerpt {
-	font-family: var(--font-sans);
-	font-size: 0.875rem;
+	font-family: var(--font-serif);
+	font-size: 0.9375rem;
 	color: var(--color-muted);
 	margin: 0;
 }
 
 /* Destaque principal da home */
+/* O momento de ousadia da página: bloco escuro sólido, foto de um lado,
+   texto em branco do outro — o único lugar do tema com esse tratamento. */
 .hero-feature {
 	display: grid;
-	grid-template-columns: 1.2fr 1fr;
-	gap: var(--space-6);
-	align-items: center;
+	grid-template-columns: 1.3fr 1fr;
+	align-items: stretch;
+	background: var(--color-ink);
 	margin-bottom: var(--space-8);
+	overflow: hidden;
 }
 
 .hero-feature .card-media {
-	aspect-ratio: 16 / 11;
+	aspect-ratio: auto;
+	height: 100%;
+	min-height: 320px;
 	margin-bottom: 0;
+}
+
+.hero-feature .hero-copy {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: var(--space-7) var(--space-6);
+	color: #fff;
 }
 
 .hero-feature h1,
 .hero-feature h2 {
-	font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+	font-size: clamp(1.9rem, 3.6vw, 2.65rem);
+	color: #fff;
 }
 
 .hero-feature .hero-title-link {
@@ -497,7 +569,11 @@ small,
 .hero-feature .card-excerpt {
 	font-family: var(--font-serif);
 	font-size: 1.0625rem;
-	color: var(--color-ink);
+	color: #e8e2d6;
+}
+
+.hero-feature .kicker {
+	align-self: flex-start;
 }
 
 /* -------------------------------------------------------------------------
@@ -511,7 +587,8 @@ small,
 	font-family: var(--font-sans);
 }
 
-.category-chips a {
+.category-chips a,
+.category-chips a:visited {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.4em;
@@ -537,8 +614,9 @@ small,
    10. Conteúdo de post único
    ------------------------------------------------------------------------- */
 .single-article {
-	max-width: var(--maxw-reading);
+	max-width: var(--maxw-content);
 	margin-inline: auto;
+	padding-inline: var(--space-5);
 	padding-block: var(--space-7);
 }
 
@@ -547,15 +625,8 @@ small,
 }
 
 .entry-kicker {
-	display: inline-block;
-	font-family: var(--font-sans);
-	font-size: 0.8125rem;
-	font-weight: 700;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	color: var(--color-accent-text);
-	text-decoration: none;
 	margin-bottom: var(--space-3);
+	font-size: 0.875rem;
 }
 
 .entry-title {
@@ -578,7 +649,11 @@ small,
 }
 
 .featured-media {
-	margin: var(--space-5) calc(var(--maxw-reading) * -0.12) var(--space-6);
+	margin-block: var(--space-5) var(--space-6);
+}
+
+.featured-media:has(.media-placeholder) {
+	aspect-ratio: 16 / 9;
 }
 
 .entry-content {
@@ -597,6 +672,12 @@ small,
 .entry-content img,
 .entry-content figure {
 	margin-inline: auto;
+}
+
+.entry-content img,
+.featured-media img {
+	width: 100%;
+	height: auto;
 }
 
 .entry-content figure {
@@ -651,7 +732,8 @@ small,
 	font-size: 0.8125rem;
 }
 
-.entry-tags a {
+.entry-tags a,
+.entry-tags a:visited {
 	text-decoration: none;
 	color: var(--color-muted);
 	border: var(--border);
@@ -720,8 +802,9 @@ small,
    13. Comentários
    ------------------------------------------------------------------------- */
 .comments-area {
-	max-width: var(--maxw-reading);
+	max-width: var(--maxw-content);
 	margin-inline: auto;
+	padding-inline: var(--space-5);
 	padding-bottom: var(--space-8);
 	font-family: var(--font-sans);
 }
@@ -780,7 +863,7 @@ small,
    ------------------------------------------------------------------------- */
 .btn,
 .comment-respond .form-submit input,
-#searchform button {
+.search-form .search-submit {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -799,7 +882,7 @@ small,
 
 .btn:hover,
 .comment-respond .form-submit input:hover,
-#searchform button:hover {
+.search-form .search-submit:hover {
 	background: var(--color-ink);
 }
 
@@ -825,7 +908,7 @@ small,
 	position: relative;
 }
 
-#searchform {
+.search-form {
 	display: flex;
 	gap: var(--space-2);
 	position: absolute;
@@ -838,16 +921,22 @@ small,
 	width: min(320px, 90vw);
 }
 
-#searchform label {
+.search-form .search-field {
 	flex: 1;
-}
-
-#searchform input[type="search"] {
 	width: 100%;
 	padding: var(--space-2) var(--space-3);
 	border: var(--border);
 	border-radius: var(--radius);
 	font-size: 1rem;
+	font-family: var(--font-sans);
+	background: var(--color-bg-elevated);
+	color: var(--color-ink);
+}
+
+.search-form .search-submit {
+	white-space: nowrap;
+	padding: 0.5em 1em;
+	min-height: auto;
 }
 
 .search-results-summary {
@@ -862,6 +951,7 @@ small,
 .no-results {
 	max-width: var(--maxw-reading);
 	margin-inline: auto;
+	padding-inline: var(--space-5);
 	padding-block: var(--space-8);
 	text-align: center;
 }
@@ -905,10 +995,6 @@ small,
 
 .footer-grid a:hover {
 	color: var(--color-accent-text);
-}
-
-.footer-brand .site-title {
-	font-size: 1.35rem;
 }
 
 .footer-social {
@@ -972,10 +1058,6 @@ summary:focus-visible {
 		grid-template-columns: 1fr;
 		gap: var(--space-5);
 	}
-
-	.featured-media {
-		margin-inline: calc(var(--space-5) * -1);
-	}
 }
 
 @media (min-width: 782px) {
@@ -988,7 +1070,15 @@ summary:focus-visible {
 	.wrap {
 		padding-inline: var(--space-4);
 	}
+}
 
+@media (max-width: 1024px) {
+	.post-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 640px) {
 	.post-grid {
 		grid-template-columns: 1fr;
 	}
@@ -1004,9 +1094,12 @@ summary:focus-visible {
 		--color-ink: #f2ece2;
 		--color-muted: #a89e91;
 		--color-border: #3a352c;
+		--color-sand: #2b2318;
 		--color-accent: #e08942;
 		--color-accent-text: #f0a35f;
 		--color-accent-contrast: #18160f;
+		--color-pillar-receitas: #9dc0a0;
+		--color-pillar-receitas-bright: #7fa583;
 	}
 }
 

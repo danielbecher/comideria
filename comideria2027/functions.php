@@ -11,7 +11,13 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'COMIDERIA_VERSION', '1.0.0' );
+/*
+ * Usa a data de modificação do style.css como versão dos assets, em vez de
+ * um número fixo — assim, toda vez que o CSS for editado, o navegador (e
+ * qualquer cache de página, tipo LiteSpeed Cache) automaticamente busca a
+ * versão nova em vez de servir uma cópia antiga em cache.
+ */
+define( 'COMIDERIA_VERSION', (string) filemtime( get_stylesheet_directory() . '/style.css' ) );
 
 /**
  * Setup geral do tema.
@@ -26,15 +32,9 @@ function comideria_setup() {
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'customize-selective-refresh-widgets' );
-	add_theme_support(
-		'custom-logo',
-		array(
-			'height'      => 96,
-			'width'       => 320,
-			'flex-height' => true,
-			'flex-width'  => true,
-		)
-	);
+	// Sem add_theme_support( 'custom-logo' ) de propósito: a logo é fixa no
+	// tema (assets/logo.png, ver comideria_site_logo()) — não queremos um
+	// controle de upload no Personalizar que não faria nada.
 
 	// Restringe a paleta e os tamanhos de fonte do editor de blocos à identidade do site.
 	add_theme_support( 'editor-color-palette', array(
@@ -109,3 +109,4 @@ add_filter( 'wp_calculate_image_sizes', 'comideria_image_sizes_attr', 10, 2 );
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/cleanup.php';
 require get_template_directory() . '/inc/seo-fallback.php';
+require get_template_directory() . '/inc/analytics.php';

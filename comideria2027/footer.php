@@ -12,20 +12,19 @@ defined( 'ABSPATH' ) || exit;
 <footer id="colophon" class="site-footer">
 	<div class="wrap footer-grid">
 		<div class="footer-brand">
-			<p class="site-title"><?php bloginfo( 'name' ); ?></p>
-			<p class="site-tagline"><?php bloginfo( 'description' ); ?></p>
+			<?php comideria_site_logo( 'footer-logo' ); ?>
 			<div class="footer-social">
 				<?php
 				// Perfis conhecidos do rodapé histórico (article:publisher no JSON-LD atual do site).
 				$socials = array(
-					'Facebook'  => 'https://facebook.com/comideria',
-					'Twitter'   => 'https://twitter.com/comideria',
-					'Instagram' => 'https://instagram.com/comideria',
+					'facebook'  => array( 'label' => 'Facebook', 'url' => 'https://facebook.com/comideria' ),
+					'twitter'   => array( 'label' => 'Twitter', 'url' => 'https://twitter.com/comideria' ),
+					'instagram' => array( 'label' => 'Instagram', 'url' => 'https://instagram.com/comideria' ),
 				);
-				foreach ( $socials as $network => $url ) :
+				foreach ( $socials as $network => $data ) :
 					?>
-					<a href="<?php echo esc_url( $url ); ?>" rel="me noopener" aria-label="<?php echo esc_attr( $network ); ?>">
-						<?php echo esc_html( strtoupper( substr( $network, 0, 1 ) ) ); ?>
+					<a href="<?php echo esc_url( $data['url'] ); ?>" rel="me noopener" aria-label="<?php echo esc_attr( $data['label'] ); ?>">
+						<?php echo comideria_social_icon( $network ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</a>
 					<?php
 				endforeach;

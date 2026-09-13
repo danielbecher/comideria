@@ -8,20 +8,9 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-card' ); ?>>
-	<?php if ( has_post_thumbnail() ) : ?>
-		<a class="card-media" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
-			<?php
-			the_post_thumbnail(
-				'comideria-card',
-				array(
-					'loading'  => 'lazy',
-					'decoding' => 'async',
-					'alt'      => the_title_attribute( array( 'echo' => false ) ),
-				)
-			);
-			?>
-		</a>
-	<?php endif; ?>
+	<a class="card-media" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
+		<?php comideria_the_post_media( 'comideria-card' ); ?>
+	</a>
 
 	<?php comideria_the_kicker(); ?>
 

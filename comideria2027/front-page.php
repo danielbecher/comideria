@@ -62,21 +62,17 @@ if ( $highlight_query->have_posts() ) {
 	?>
 	<section class="section hero-feature-wrap wrap">
 		<article class="hero-feature">
-			<?php if ( has_post_thumbnail() ) : ?>
-				<a class="card-media" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
-					<?php
-					the_post_thumbnail(
-						'comideria-hero',
-						array(
-							'loading'       => 'eager',
-							'fetchpriority' => 'high',
-							'decoding'      => 'async',
-							'alt'           => the_title_attribute( array( 'echo' => false ) ),
-						)
-					);
-					?>
-				</a>
-			<?php endif; ?>
+			<a class="card-media" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
+				<?php
+				comideria_the_post_media(
+					'comideria-hero',
+					array(
+						'loading'       => 'eager',
+						'fetchpriority' => 'high',
+					)
+				);
+				?>
+			</a>
 			<div class="hero-copy">
 				<?php comideria_the_kicker(); ?>
 				<h1><a class="hero-title-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
@@ -94,7 +90,7 @@ if ( $review_term ) :
 	$latest_query = new WP_Query(
 		array(
 			'cat'                 => $review_term->term_id,
-			'posts_per_page'      => 6,
+			'posts_per_page'      => 10,
 			'post__not_in'        => array( $highlight_id ),
 			'ignore_sticky_posts' => true,
 		)

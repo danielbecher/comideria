@@ -23,14 +23,7 @@ defined( 'ABSPATH' ) || exit;
 <header id="masthead" class="site-header">
 	<div class="wrap">
 		<div class="site-branding">
-			<?php if ( has_custom_logo() ) : ?>
-				<?php the_custom_logo(); ?>
-			<?php else : ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<p class="site-title"><?php bloginfo( 'name' ); ?></p>
-					<p class="site-tagline"><?php bloginfo( 'description' ); ?></p>
-				</a>
-			<?php endif; ?>
+			<?php comideria_site_logo(); ?>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Menu principal', 'comideria' ); ?>">
@@ -39,7 +32,7 @@ defined( 'ABSPATH' ) || exit;
 				array(
 					'theme_location' => 'primary',
 					'container'      => false,
-					'fallback_cb'    => false,
+					'fallback_cb'    => 'comideria_nav_menu_fallback',
 				)
 			);
 			?>
@@ -61,7 +54,7 @@ defined( 'ABSPATH' ) || exit;
 						'theme_location' => 'primary',
 						'container'      => false,
 						'items_wrap'     => '%3$s',
-						'fallback_cb'    => false,
+						'fallback_cb'    => 'comideria_nav_menu_fallback',
 					)
 				);
 				?>

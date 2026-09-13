@@ -26,21 +26,17 @@ while ( have_posts() ) :
 			</div>
 		</header>
 
-		<?php if ( has_post_thumbnail() ) : ?>
-			<div class="featured-media">
-				<?php
-				the_post_thumbnail(
-					'comideria-hero',
-					array(
-						'loading'       => 'eager',
-						'fetchpriority' => 'high',
-						'decoding'      => 'async',
-						'alt'           => the_title_attribute( array( 'echo' => false ) ),
-					)
-				);
-				?>
-			</div>
-		<?php endif; ?>
+		<div class="featured-media">
+			<?php
+			comideria_the_post_media(
+				'comideria-hero',
+				array(
+					'loading'       => 'eager',
+					'fetchpriority' => 'high',
+				)
+			);
+			?>
+		</div>
 
 		<div class="entry-content">
 			<?php
