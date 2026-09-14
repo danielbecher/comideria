@@ -97,6 +97,7 @@ a {
 	--color-accent-text: #8a3c10; /* terracota escurecido — contraste AAA para texto/links */
 	--color-accent-contrast: #ffffff;
 	--color-pillar-receitas: #3f5a42; /* verde sargaço — pilar Receitas, contraste AA */
+	--color-hero-bg: #17140f; /* fundo fixo do hero — independente de --color-ink */
 	--color-pillar-receitas-bright: #5c7d5f; /* variante clara — decorativo/ícones */
 
 	--font-serif: Georgia, "Iowan Old Style", "Palatino Linotype", "URW Palladio L", serif;
@@ -207,6 +208,10 @@ small,
 	padding-block: var(--space-7);
 }
 
+.hero-feature-wrap {
+	padding-bottom: var(--space-5);
+}
+
 .section-heading {
 	display: flex;
 	align-items: baseline;
@@ -250,7 +255,7 @@ small,
 	top: -100px;
 	left: var(--space-4);
 	z-index: 999;
-	background: var(--color-ink);
+	background: var(--color-hero-bg);
 	color: #fff;
 	padding: var(--space-3) var(--space-4);
 	border-radius: var(--radius);
@@ -268,6 +273,8 @@ small,
 .site-header {
 	border-bottom: var(--border);
 	background: var(--color-bg-elevated);
+	position: relative;
+	z-index: 300; /* fica por cima do overlay do menu mobile, ver .nav-toggle[open] .mobile-menu */
 }
 
 .site-header .wrap {
@@ -276,6 +283,7 @@ small,
 	justify-content: space-between;
 	gap: var(--space-5);
 	padding-block: var(--space-4);
+	position: relative; /* ancora o dropdown de busca no header inteiro, não no ícone */
 }
 
 .site-branding {
@@ -333,37 +341,76 @@ small,
 .nav-toggle summary {
 	cursor: pointer;
 	list-style: none;
-	font-family: var(--font-sans);
-	font-weight: 600;
-	font-size: 0.9375rem;
-	padding: var(--space-2) 0;
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-2);
+	margin: calc(var(--space-2) * -1);
+	min-width: 44px;
+	min-height: 44px;
+	justify-content: center;
+	position: relative;
+	z-index: 260; /* fica visível por cima do overlay .mobile-menu (z-index 250) */
 }
 
 .nav-toggle summary::-webkit-details-marker {
 	display: none;
 }
 
-.nav-toggle summary::after {
-	content: "";
-	display: inline-block;
-	width: 0.5em;
-	height: 0.5em;
-	margin-left: var(--space-2);
-	border-right: 2px solid currentColor;
-	border-bottom: 2px solid currentColor;
-	transform: rotate(45deg);
-	vertical-align: 0.15em;
+/* Ícone de hambúrguer → X, só com transição de CSS (ver comideria_hamburger_icon()). */
+.hamburger {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 22px;
+	height: 16px;
+	flex-shrink: 0;
 }
 
-.nav-toggle[open] summary::after {
-	transform: rotate(-135deg);
+.hamburger span {
+	display: block;
+	height: 2px;
+	background: currentColor;
+	border-radius: 1px;
+	transition: transform 0.2s ease, opacity 0.15s ease;
+}
+
+.nav-toggle[open] .hamburger span:nth-child(1) {
+	transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[open] .hamburger span:nth-child(2) {
+	opacity: 0;
+}
+
+.nav-toggle[open] .hamburger span:nth-child(3) {
+	transform: translateY(-7px) rotate(-45deg);
 }
 
 .nav-toggle .mobile-menu {
-	padding: var(--space-2) 0 var(--space-4);
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-1);
+	list-style: none; /* os <li> do menu vêm sem <ul> (items_wrap='%3$s') */
+}
+
+/* Aberto: cobre a tela inteira por cima do conteúdo (não empurra a página
+   pra baixo) — um menu mobile "de verdade", sem nenhum JavaScript. */
+.nav-toggle[open] .mobile-menu {
+	position: fixed;
+	inset: 0;
+	z-index: 250;
+	background: var(--color-bg-elevated);
+	padding: 108px var(--space-5) var(--space-6);
+	overflow-y: auto;
+}
+
+body:has(.nav-toggle[open]) {
+	overflow: hidden;
+}
+
+.nav-toggle .mobile-menu li,
+.nav-toggle .mobile-menu .menu-item {
+	list-style: none;
 }
 
 .nav-toggle .mobile-menu a {
@@ -535,8 +582,7 @@ small,
 	display: grid;
 	grid-template-columns: 1.3fr 1fr;
 	align-items: stretch;
-	background: var(--color-ink);
-	margin-bottom: var(--space-8);
+	background: var(--color-hero-bg);
 	overflow: hidden;
 }
 
@@ -904,14 +950,13 @@ small,
 	display: none;
 }
 
-.search-toggle[open] {
-	position: relative;
-}
-
 .search-form {
 	display: flex;
 	gap: var(--space-2);
 	position: absolute;
+	/* Ancorado em .site-header .wrap (o header inteiro), não no ícone —
+	   senão a caixa de 320px estoura a tela num celular, onde o ícone fica
+	   longe da borda direita real. */
 	right: 0;
 	top: calc(100% + var(--space-2));
 	background: var(--color-bg-elevated);
@@ -919,6 +964,7 @@ small,
 	padding: var(--space-3);
 	z-index: 10;
 	width: min(320px, 90vw);
+	max-width: calc(100% - 2px);
 }
 
 .search-form .search-field {
@@ -1081,25 +1127,6 @@ summary:focus-visible {
 @media (max-width: 640px) {
 	.post-grid {
 		grid-template-columns: 1fr;
-	}
-}
-
-/* -------------------------------------------------------------------------
-   Tema escuro (prefers-color-scheme) — mantém excelente contraste
-   ------------------------------------------------------------------------- */
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-bg: #18160f;
-		--color-bg-elevated: #211d17;
-		--color-ink: #f2ece2;
-		--color-muted: #a89e91;
-		--color-border: #3a352c;
-		--color-sand: #2b2318;
-		--color-accent: #e08942;
-		--color-accent-text: #f0a35f;
-		--color-accent-contrast: #18160f;
-		--color-pillar-receitas: #9dc0a0;
-		--color-pillar-receitas-bright: #7fa583;
 	}
 }
 
