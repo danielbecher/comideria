@@ -26,18 +26,6 @@ while ( have_posts() ) :
 			</div>
 		</header>
 
-		<div class="featured-media">
-			<?php
-			comideria_the_post_media(
-				'comideria-hero',
-				array(
-					'loading'       => 'eager',
-					'fetchpriority' => 'high',
-				)
-			);
-			?>
-		</div>
-
 		<div class="entry-content">
 			<?php
 			the_content();

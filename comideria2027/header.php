@@ -46,7 +46,9 @@ defined( 'ABSPATH' ) || exit;
 		</details>
 
 		<details class="nav-toggle">
-			<summary><?php esc_html_e( 'Menu', 'comideria' ); ?></summary>
+			<summary aria-label="<?php esc_attr_e( 'Abrir menu', 'comideria' ); ?>">
+				<?php echo comideria_hamburger_icon(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			</summary>
 			<nav class="mobile-menu" aria-label="<?php esc_attr_e( 'Menu mobile', 'comideria' ); ?>">
 				<?php
 				wp_nav_menu(
